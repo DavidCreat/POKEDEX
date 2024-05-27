@@ -9,15 +9,32 @@
 </head>
 
 <body>
-    <div class="pokemon-container">
-        <div id="pokemon-grid" class="pokemon-grid">
-            <!-- Los Pokémon -->
+    <div class="navbar">
+        <h1>POKEMONS</h1>
+        <div class="filters">
+            <button id="sort-name-az">Nombres de la A - Z</button>
+            <button id="sort-name-za">Nombres de la Z - A</button>
+            <button id="sort-id-asc">ID Ascendente</button>
+            <button id="sort-id-desc">ID Descendente</button>
+            <button onclick="indexredi()">INICIO</button>
         </div>
-        <div class="sentinel"></div>
-        <!-- Sentinel para detectar el final de la lista -->
     </div>
-
+    <div class="main-page">
+        <div class="pokemon-container">
+            <div id="pokemon-grid" class="pokemon-grid">
+                <!-- Los Pokémon -->
+            </div>
+            <div class="sentinel"></div>
+            <!-- Sentinel para detectar el final de la lista -->
+        </div>
+    </div>
     <script src="../js/pokemons.js"></script>
+    <script>
+        function indexredi() {
+            window.location.href = '../index.html';
+        }
+    </script>
+
 </body>
 
 </html>

@@ -5,12 +5,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pokedex - Detalles</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/fizzy-soda');
+        @import url('https://fonts.cdnfonts.com/css/super-onigiri');
+        body {
+            display: flex;
+            height: 100vh;
+            margin: 0;
+        }
+        
+        .pokemon-details-container {
+            display: flex;
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        .pokemon-info {
+            flex: 1;
+            padding: 20px;
+            background-color: #000000;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            position: relative;
+            /* Added for absolute positioning of Pokeball image */
+        }
+        
+        .pokemon-info h1 {
+            font-size: 6.5em;
+            margin-bottom: 20px;
+            font-family: 'Fizzy Soda', sans-serif;
+        }
+        
+        .pokemon-info p {
+            margin: 5px 0;
+            font-size: 2.2em;
+            font-family: 'Super Onigiri', sans-serif;
+        }
+        
+        .pokemon-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .pokemon-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            animation: float 6s ease-in-out infinite;
+            z-index: 2;
+        }
+        
+        .center-image {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            max-width: 500%;
+            max-height: 500%;
+            z-index: 1;
+            opacity: 20%;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translatey(0px);
+            }
+            50% {
+                transform: translatey(-20px);
+            }
+            100% {
+                transform: translatey(0px);
+            }
+        }
+        
+        .button-32 {
+            background-color: #ffffff;
+            border-radius: 12px;
+            color: #000000;
+            cursor: pointer;
+            font-weight: bold;
+            padding: 10px 15px;
+            text-align: center;
+            transition: 200ms;
+            width: 100%;
+            box-sizing: border-box;
+            border: 0;
+            font-size: 16px;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+        
+        .button-32:not(:disabled):hover,
+        .button-32:not(:disabled):focus {
+            outline: 0;
+            background: #f4e603;
+            box-shadow: 0 0 0 2px rgba(0, 0, 0, .2), 0 3px 8px 0 rgba(0, 0, 0, .15);
+        }
+        
+        .button-32:disabled {
+            filter: saturate(0.2) opacity(0.5);
+            -webkit-filter: saturate(0.2) opacity(0.5);
+            cursor: not-allowed;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="pokemon-details-page" id="pokemon-details-page">
-        <!-- Detalles del Pokémon -->
+    <div class="pokemon-details-container">
+        <div class="pokemon-info" id="pokemon-details-page">
+            <!-- Detalles del Pokémon -->
+            <img src="../img/bokebola.png" alt="Pokedex" class="center-image" id="pokeball-image">
+        </div>
+        <div class="pokemon-image" id="pokemon-image">
+            <!-- Imagen del Pokémon -->
+        </div>
     </div>
 
     <script src="../js/pokemon_detalles.js"></script>
