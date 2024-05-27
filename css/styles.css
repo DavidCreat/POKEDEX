@@ -291,23 +291,17 @@ button:hover {
 @media screen and (max-width: 768px) {
     body {
         font-size: 16px;
-        /* Ajusta el tamaño de fuente para dispositivos móviles */
     }
     .navbar h1 {
         font-size: 3rem;
-        /* Reduce el tamaño del título de la barra de navegación */
     }
     .welcome-page h1 {
         font-size: 3rem;
-        /* Reduce el tamaño del título en la página de bienvenida */
     }
     .pokemon-container {
         padding: 1rem;
-        /* Reduce el espacio alrededor de los contenedores de Pokémon */
     }
     .pokemon-card {
         padding: 0.5rem;
-        /* Reduce el espacio alrededor de las tarjetas de Pokémon */
     }
-    /* Agrega más ajustes según sea necesario para elementos específicos */
 }
