@@ -4,6 +4,27 @@ document.addEventListener("DOMContentLoaded", () => {
     const loadBatchSize = 20;
     let allPokemons = [];
 
+    const typeColors = {
+        normal: '#A8A77A',
+        fire: '#EE8130',
+        water: '#6390F0',
+        electric: '#F7D02C',
+        grass: '#7AC74C',
+        ice: '#96D9D6',
+        fighting: '#C22E28',
+        poison: '#A33EA1',
+        ground: '#E2BF65',
+        flying: '#A98FF3',
+        psychic: '#F95587',
+        bug: '#A6B91A',
+        rock: '#B6A136',
+        ghost: '#735797',
+        dragon: '#6F35FC',
+        dark: '#705746',
+        steel: '#B7B7CE',
+        fairy: '#D685AD',
+    };
+
     async function fetchPokemonBatch(offset, limit) {
         for (let i = offset; i < offset + limit; i++) {
             const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${i + 1}`);
@@ -22,6 +43,10 @@ document.addEventListener("DOMContentLoaded", () => {
     async function displayPokemon(pokemon) {
         const pokemonCard = document.createElement('div');
         pokemonCard.classList.add('pokemon-card');
+
+        // Cambiar color fondo
+        const primaryType = pokemon.types[0].type.name;
+        pokemonCard.style.backgroundColor = typeColors[primaryType];
 
         const highQualityImageURL = await fetchHighQualityImage(pokemon);
 
@@ -49,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function clearPokemonGrid() {
         pokemonGrid.innerHTML = '';
     }
-
+    /*BY: DAVID CREAT - EAS1*/
     function sortPokemons(criteria) {
         clearPokemonGrid();
         let sortedPokemons = [];
@@ -95,4 +120,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     fetchPokemonBatch(loadedPokemons, loadBatchSize);
     loadedPokemons += loadBatchSize;
+
+
+    // Buscar Pokémon por nombre
+    const searchInput = document.getElementById('searchInput');
+    const searchButton = document.getElementById('searchButton');
+
+    searchButton.addEventListener('click', () => {
+        const searchTerm = searchInput.value.toLowerCase();
+        const filteredPokemons = allPokemons.filter(pokemon =>
+            pokemon.name.toLowerCase().includes(searchTerm)
+        );
+        clearPokemonGrid();
+        filteredPokemons.forEach(pokemon => displayPokemon(pokemon));
+    });
+
 });
+/*BY: DAVID CREAT - EAS1*/

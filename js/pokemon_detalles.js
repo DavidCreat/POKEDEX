@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const pokemonDetailsPage = document.getElementById('pokemon-details-page');
     const pokemonImageContainer = document.getElementById('pokemon-image');
-    const pokeballImage = document.getElementById('pokeball-image');
     const urlParams = new URLSearchParams(window.location.search);
     const pokemonId = urlParams.get('id');
 
@@ -62,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const pokeballImage = document.getElementById('pokeball-image');
         const pokemonInfo = document.querySelector('.pokemon-info');
         const infoWidth = pokemonInfo.scrollWidth;
-        pokeballImage.style.left = `${infoWidth + 20}px`; // Adjust the left position dynamically
+        pokeballImage.style.left = `${infoWidth + 20}px`;
     }
 
     if (pokemonId) {
@@ -78,3 +77,4 @@ document.addEventListener("DOMContentLoaded", () => {
 function redirectToMain() {
     window.location.href = 'main.html';
 }
+/*BY: DAVID CREAT - EAS1*/
