@@ -3,7 +3,7 @@
 ![PokeAPI](https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi.svg?sanitize=true)
 ![DavidCreat](https://i.ibb.co/PcsT12n/Sin-t-tulo-1asdas-1.png)
 
-¡Bienvenido a nuestra aplicación web de PokeAPI! 🎉 Este proyecto te permite explorar información detallada sobre tus Pokémon favoritos. 🔍
+¡Bienvenido a mi web de PokeAPI! 🎉 Este proyecto te permite explorar información detallada sobre tus Pokémon favoritos. 🔍
 
 ## 🚀 Características
 
